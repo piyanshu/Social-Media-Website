@@ -3,6 +3,7 @@ const app = express();
 const port = 8000;
 const expressLayouts = require('express-ejs-layouts');
 const db = require('./config/mongoose');
+const User = require('./models/user');
 
 app.use(express.static('./assets'));
 // use the express router 
