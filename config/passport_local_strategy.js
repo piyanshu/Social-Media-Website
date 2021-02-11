@@ -17,6 +17,7 @@ passport.use(new LocalStrategy ({
                 console.log('Invalid username/password');
                 return done(null, false);
             }
+            console.log('authenticated');
             return done(null, user);
         });
     }
@@ -24,6 +25,7 @@ passport.use(new LocalStrategy ({
 
 // serialising the user to decide which key is to be kept in the cookies
 passport.serializeUser(function(user, done){
+    console.log('serialise');
     return done(null, user.id);
 });
 
@@ -34,6 +36,7 @@ passport.deserializeUser(function(id, done){
             console.log('error in finding the user --> passport');
             return done(err);
         }
+        console.log('deserialise');
         return done(null, user);
     });
 });
@@ -41,6 +44,7 @@ passport.deserializeUser(function(id, done){
 passport.checkAuthentication = function(req, res, next){
 // If the user signed in, then pass on the request to the next function(controller's action) 
     if(req.isAuthenticated()){
+        console.log('checkauthentication');
         return next();
     }
 
@@ -51,6 +55,7 @@ passport.setAuthenticatedUser = function(req, res, next){
     if(req.isAuthenticated()){
 /*  req.user contains the current signed in user from the session cookie and we are
     just sending this to the locals for views  */ 
+    console.log('setauthentication');
         res.locals.user = req.user;
     }
     next();
