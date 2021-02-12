@@ -1,0 +1,16 @@
+#container1 {
+  display: flex;
+  justify-content: space-between;
+  background-color: #2E338B;
+  height: 10%;
+  color: white;
+  padding: 0px 10px; }
+  #container1 h1 {
+    width: 89%; }
+  #container1 .container2 {
+    width: 14%;
+    display: flex;
+    justify-content: space-between; }
+    #container1 .container2 h2 a {
+      text-decoration: none;
+      color: white; }
