@@ -11,6 +11,18 @@ module.exports.profile = function(req, res){
         });
     })
 };
+module.exports.update = function(req, res){
+    if(req.params.id == req.user.id){
+        User.findByIdAndUpdate(req.params.id, req.body, function(err, user){
+            if(err){
+                console.log('Error in updating the user');
+            }
+            return res.redirect('back');
+        });
+    }else{
+        return res.status(401).send('Unauthorised');
+    }
+};
 module.exports.signUp = function(req, res){
     if(req.isAuthenticated()){
         return res.redirect('/users/profile');
