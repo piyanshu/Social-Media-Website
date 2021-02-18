@@ -1,16 +1,20 @@
-#container1 {
+#layout-header nav {
   display: flex;
   justify-content: space-between;
-  background-color: #2E338B;
-  height: 10%;
+  padding: 0 10px;
+  background: #2196f3;
   color: white;
-  padding: 0px 10px; }
-  #container1 h1 {
-    width: 89%; }
-  #container1 .container2 {
-    width: 14%;
+  box-shadow: 1px 1px 1px 1px lightgrey; }
+  #layout-header nav .mini-logo p {
+    margin: 5px;
+    font-size: 1.4rem;
+    font-weight: bold; }
+  #layout-header nav .auth-links ul {
+    margin: 5% 5px;
     display: flex;
-    justify-content: space-between; }
-    #container1 .container2 h2 a {
-      text-decoration: none;
-      color: white; }
+    list-style: none; }
+    #layout-header nav .auth-links ul li {
+      margin-right: 10px; }
+  #layout-header nav a {
+    color: white;
+    text-decoration: none; }
